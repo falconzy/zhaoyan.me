@@ -9,7 +9,11 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-
+var fs = require('fs');
+var path = require('path');
+var mime = require('mime');
+var cache ={};
+var chatServer = require('./chatRoom/lib/chat_server.js');
 var app = express();
 
 // all environments
@@ -70,6 +74,10 @@ app.get('/calStock', function(req,res){
 	res.redirect('/HTML/calStock.html');
 });
 
+app.get('/chatRoom', function(req,res){
+	res.redirect('../HTML/chatIndex.html');
+});
+
 
 app.get('/about', function(req,res){
 	 res.render('about.ejs',{
@@ -77,18 +85,11 @@ app.get('/about', function(req,res){
 	 	layout:'layout'})
 });
 
-/*
-app.get('*', function(req, res) {
- res.render('ComingSoon.ejs',{
-	 	title: 'PAGE NOT FOUND',
-	 	layout:'layout'})
-});
-*/
 app.use(function(req, res, next) {
   res.status(404);
   req.accepts('html');
   if (req.accepts('ejs')) {
-   		res.render('ComingSoon.ejs',{
+   		res.render('comingSoon.ejs',{
 	 	title: 'PAGE NOT FOUND',
 	 	layout:'layout'})
     return;
@@ -98,6 +99,8 @@ app.use(function(req, res, next) {
   res.type('txt').send('Not found');
 });
 
-http.createServer(app).listen(app.get('port'), function(){
+server = http.createServer(app);
+chatServer.listen(server); 
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
