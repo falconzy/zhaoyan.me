@@ -13,7 +13,7 @@ var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
 var cache ={};
-var chatServer = require('./chatRoom/lib/chat_server.js');
+var chatServer = require('./chat/server.js');
 var app = express();
 
 // all environments
