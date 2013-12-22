@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SGXCal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  <script type="text/javascript" src="../js/stockScript.js"></script>
+
+<link rel="apple-touch-icon" href="/stock/apple-touch-icon.png" />
+ </head>
+<body>
+<div data-role="page" id="Home">
+     <div data-role="header">
+        <a href="#Info"  class="ui-btn-right" data-role="button" data-inline="true" data-mini="true" data-rel="dialog" data-transition="pop" data-icon="info">INFO </a>
+        <h3>SGX Calculator</h3>
+      </div><!-- /header -->
+    <div data-role="content">
+        <form class="form-horizontal">
+        <fieldset>
+            
+            <div class="control-group">
+            <label class="control-label">Stock Name</label>
+            <div class="controls">
+              <input id="StockName" name="Stock Name" type="text" placeholder="Option" class="input-xlarge" required="">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Buy Price</label>
+            <div class="controls">
+              <input id="BuyPrice" name="Buy price" type="number" placeholder="Buy Price" class="input-xlarge" required="">
+            </div>
+          </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label">Sell Price</label>
+          <div class="controls">
+            <input id="SellPrice" name="SellPrice" type="number" placeholder="Sell Price" class="input-xlarge">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label">No. of Share</label>
+          <div class="controls">
+            <input id="NoofShare" name="NoofShare" type="number" placeholder="No. of Share" class="input-xlarge" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label">Commission Rate (%)</label>
+          <div class="controls">
+            <input id="CommissionRate" name="CommissionRate" type="number" value="0.275" class="input-xlarge" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label">Min Commission (S$)</label>
+          <div class="controls">
+            <input id="MinCommission" name="MinCommission" type="number" value="25" class="input-xlarge" required="">
+          </div>
+        </div>
+        <!-- Button -->
+        <div id="Sumbit">
+        <a  href="#Result"  data-role="button" data-mini="true" data-inline="true" data-icon="check" data-transition="flip" data-theme="b">Calculate</a>
+        </div>
+
+        </fieldset>
+        </form>
+      </div><!-- /content -->
+       <div data-role="footer" data-position="fixed">
+        <h4>zhaoyan.me</h4></div>
+</div><!-- /footer -->
+
+<div data-role="page" id="Result">
+  <div data-role="header">
+   <a href="#Home" data-role="button" data-inline="true" data-mini="true" data-transition="flip" data-icon="home">HOME </a>
+   <a href="#Info"  data-role="button" data-inline="true" data-mini="true" data-rel="dialog" data-transition="slidedown" data-icon="info">INFO </a>
+
+        <h3>SGX Calculator</h3>
+      </div>
+  <div data-role="content">
+    <div id='ResultPannel'>
+     <table data-role="table">
+         <thead>
+        <tr>
+            <th>Store</th>
+            <th>Buy Cost</th>
+            <th>Sell Cost</th>
+            <th>Profit</th>
+            <th>Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="StoreField"><span></span></td>
+            <td id="BuyField"><span></span></td>
+            <td id="SellField"><span></span></td>
+            <td id="ProfitField"><span></span></td>
+            <td id="ChangeField"><span></span></td>
+        </tr>
+    </tbody>
+    </table> 
+    <hr>
+        <div>
+          <h5> The Clearing Fee will be at 0.04% of contract value subject to a maximum of S$600 </h5>
+          <h5>SGX Access Fee (0.0075%)</h5>  
+            <h5> Calculations through the online calculator include GST of 7% on brokerage,clearing fee and SGX Access Fee. </h5>
+        </div>
+    </div>
+  
+  </div><!-- /content -->
+  <d  <div data-role="footer" data-position="fixed">
+        <h4>zhaoyan.me</h4></div>
+</div>
+<div data-role="dialog" id="Info">
+   <div data-role="header">
+    <h3>Info</h3>
+   </div>
+    <div data-role="content">
+    Thanks for using SGX stock profile calculator.<br>
+    Current Version 1.0<br>
+    If you have any question, please <a href="mailto:ian@zhaoyan.me?Subject=SGX%20Calculator" target="_top">
+    email me</a>. thanks.<br>
+    </div>
+</div>
+</div>
+</body>
+</html>

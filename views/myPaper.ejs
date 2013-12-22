@@ -1,0 +1,14 @@
+<script src="../js/angular.min.js"></script>
+<div class="PaperPhoto" ng-app="PaperGallery">
+		<div ng-controller="PaperCtrl">
+		<div class="row">
+        	<li ng-repeat="smallphoto in photos.SmallPhotos" class="thumbnail col-sm-6 col-md-3">
+            <img
+                src="{{ smallphoto.url }}"
+                width="240"
+                height="180"
+            />
+        	</li>
+</div>
+<script src="../js/PaperGallery.js"   type="text/javascript"></script>
+	
