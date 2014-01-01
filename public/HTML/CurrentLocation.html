@@ -4,18 +4,14 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
-      body { height: 100%; margin: 50px; padding: 10px }
-      #MAP { height: 80% }
+      body { height: 100%;}
+      #MAP { height: 100% }
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZupbj4m1rM5BursuSX2RimWtbytRN8xE&sensor=true">
     </script>
     <script type="text/javascript">
       function initialize() {
-        /*var mapOptions = {
-          //center: new google.maps.LatLng(1.3000, 103.8000),
-          //zoom: 11
-        };*/
         var mapOptions = {
     zoom: 12
   };
@@ -54,7 +50,7 @@ function handleNoGeolocation(errorFlag) {
   var options = {
     map: map,
     position: new google.maps.LatLng(1.3000, 103.8000),
-    content: content
+    content: "Welcome to Singapore"
   };
 
   var infowindow = new google.maps.InfoWindow(options);
