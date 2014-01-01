@@ -78,6 +78,10 @@ app.get('/chatRoom', function(req,res){
 	res.redirect('../HTML/chatIndex.html');
 });
 
+app.get('/map', function(req,res){
+	res.redirect('../HTML/CurrentLocation.html');
+});
+
 
 app.get('/about', function(req,res){
 	 res.render('about.ejs',{
