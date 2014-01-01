@@ -75,11 +75,11 @@ app.get('/calStock', function(req,res){
 });
 
 app.get('/chatRoom', function(req,res){
-	res.redirect('../HTML/chatIndex.html');
+	res.redirect('/HTML/chatIndex.html');
 });
 
-app.get('/map', function(req,res){
-	res.redirect('../HTML/CurrentLocation.html');
+app.get('/MyMap', function(req,res){
+	res.redirect('/HTML/CurrentLocation.html');
 });
 
 
